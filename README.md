@@ -20,8 +20,8 @@ python xml_to_json.py
 # Parameters
 ```python
 usage: xml_to_json.py [-h] -x XSD_FILE [-o OUTPUT_FORMAT] [-s SERVER]
-                      [-t TARGET_PATH] [-z] [-p XPATH] [-m MULTI] [-l LOG]
-                      [-v VERBOSE] [-n]
+                      [-t TARGET_PATH] [-z] [-p XPATH] [-a ATTRIBPATH]
+                      [-e EXCLUDEPATHS] [-m MULTI] [-l LOG] [-v VERBOSE] [-n]
                       ...
 
 XML To JSON Parser
@@ -41,10 +41,15 @@ optional arguments:
   -t TARGET_PATH, --target_path TARGET_PATH
                         target path. hdfs targets require hadoop client
                         installation. Examples: /proj/test, hdfs:///proj/test,
-                        hdfs://hdfs_server/proj/test
+                        hdfs://halfarm/proj/test
   -z, --zip             gzip output file
   -p XPATH, --xpath XPATH
                         xpath to parse out.
+  -a ATTRIBPATH, --attribpath ATTRIBPATH
+                        extra element attributes to parse out.
+  -e EXCLUDEPATHS, --excludepaths EXCLUDEPATHS
+                        elements to exclude. pass in comma separated string.
+                        /path/exclude1,/path/exclude2
   -m MULTI, --multi MULTI
                         number of parsers. Default is 1.
   -l LOG, --log LOG     log file
