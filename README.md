@@ -46,9 +46,10 @@ optional arguments:
   -p XPATH, --xpath XPATH
                         xpath to parse out.
   -a ATTRIBPATH, --attribpath ATTRIBPATH
-                        extra element attributes to parse out.
+                        extra element attributes to parse out. Pass in as a comma
+                        seperated string. /path/include1,/path/include2
   -e EXCLUDEPATHS, --excludepaths EXCLUDEPATHS
-                        elements to exclude. pass in comma separated string.
+                        elements to exclude. Pass in as a comma separated string.
                         /path/exclude1,/path/exclude2
   -m MULTI, --multi MULTI
                         number of parsers. Default is 1.
@@ -195,11 +196,11 @@ DEBUG - 2018-03-20 16:33:51 - Completed 4.xml
 JSON output
 ```json
 ls -l *.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 1.jsonl.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 2.jsonl.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 3.jsonl.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 4.jsonl.gz
--rw-r--r-- 1 ---- users 203 Mar 20 16:26 PurchaseOrder.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 1.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 2.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 3.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 4.jsonl.gz
+-rw-r--r-- 1 user users 203 Mar 20 16:26 PurchaseOrder.jsonl.gz
 
 zcat *.jsonl.gz
 
@@ -219,5 +220,3 @@ zcat *.jsonl.gz
 {"itempartNum": "926-AA", "productName": "Baby Monitor", "quantity": 1, "USPrice": 39.98, "shipDate": "1999-05-21"}
 ```
 
-# License
-This software is distributed under the terms of the MIT License. See the file 'LICENSE' in the root directory of the present distribution, or http://opensource.org/licenses/MIT.
