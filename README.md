@@ -111,7 +111,7 @@ Original XML
 
 JSON output
 (zip looks funny, but blame Microsoft which says zip is a xs:decimal in their sample XSD file)  
-https://learn.microsoft.com/en-us/visualstudio/xml-tools/sample-xsd-file-purchase-order-schema?view=visualstudio
+https://learn.microsoft.com/en-us/visualstudio/xml-tools/sample-xsd-file-simple-schema
 ```json
 {   
    "purchaseOrderorderDate":"1999-10-20",
