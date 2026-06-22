@@ -1,3 +1,10 @@
+
+Development has moved to:
+https://github.com/davlee1972/xmlwiz
+
+This new project will be updated using python 3.10+, pypi deployments and support for nested binary parquet and apache arrow memory.
+
+
 # **XML To JSON Converter**
 
 This repository contains code for the XML to JSON Converter.
