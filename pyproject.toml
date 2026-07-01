@@ -5,7 +5,6 @@ description = "xml_to_json package and tool for converting XML into Json."
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "pyarrow>=24.0.0",
     "xmlschema>=4.3.1",
 ]
 
