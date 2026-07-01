@@ -1,16 +1,15 @@
 # **XML To JSON Converter**
 
-This repository contains code for the XML to JSON Converter.
-This converter is written in Python and will convert one or more XML files into JSON / JSONL files
+This repository contains python code for converting XML to Jsonl, Parquet and Apache Arrow objects.
 
 # Key Features
 
-Converts XML to valid JSON or JSONL 
-Requires only two files to get started. Your XML file and the XSD schema file for that XML file.
-Multiprocessing enabled to parse XML files concurrently if the XML files are in the same format. Call with -m # option.
-Uses Python's iterparse event based methods which enables parsing very large files with low memory requirements. This is very similar to Java's SAX parser
+Converts XML to valid Jsonl, Parquet or Apache Arrow objects.\
+Requires only two files to get started. Your XML file and the XSD schema file for that XML file.\
+Multiprocessing enabled to parse XML files concurrently if the XML files are in the same format. Call with -m # option.\
+Uses Python's iterparse event based methods which enables parsing very large files with low memory requirements.\
+This is very similar to Java's SAX parser.\
 Files are processed in order with the largest files first to optimize overall parsing time
-Option to write results to either Linux or HDFS folders
 
 # How to run?
 ```python
@@ -19,9 +18,9 @@ python xml_to_json.py
 
 # Parameters
 ```python
-usage: xml_to_json.py [-h] -x XSD_FILE [-o OUTPUT_FORMAT] [-s SERVER]
-                      [-t TARGET_PATH] [-z] [-p XPATH] [-m MULTI] [-l LOG]
-                      [-v VERBOSE] [-n]
+usage: xml_to_json.py [-h] -x XSD_FILE [-o OUTPUT_FORMAT]
+                      [-t TARGET_PATH] [-z] [-p XPATH] 
+                      [-m MULTI] [-l LOG] [-v VERBOSE] [-n]
                       ...
 
 XML To JSON Parser
@@ -35,13 +34,10 @@ optional arguments:
                         xsd file name
   -o OUTPUT_FORMAT, --output_format OUTPUT_FORMAT
                         output format json or jsonl. Default is jsonl.
-  -s SERVER, --server SERVER
-                        server with hadoop client installed if hadoop not
-                        installed
   -t TARGET_PATH, --target_path TARGET_PATH
                         target path. hdfs targets require hadoop client
                         installation. Examples: /proj/test, hdfs:///proj/test,
-                        hdfs://hdfs_server/proj/test
+                        hdfs://hdfsserver/proj/test
   -z, --zip             gzip output file
   -p XPATH, --xpath XPATH
                         xpath to parse out.
@@ -104,7 +100,8 @@ Original XML
 ```
 
 JSON output
-(zip looks funny, but blame Microsoft which says zip is a decimal in the XSD file spec <xs:element name="zip" type="xs:decimal"/>)
+(zip looks funny, but blame Microsoft which says zip is a xs:decimal in their sample XSD file)  
+https://learn.microsoft.com/en-us/visualstudio/xml-tools/sample-xsd-file-simple-schema
 ```json
 {   
    "purchaseOrderorderDate":"1999-10-20",
@@ -190,11 +187,11 @@ DEBUG - 2018-03-20 16:33:51 - Completed 4.xml
 JSON output
 ```json
 ls -l *.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 1.jsonl.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 2.jsonl.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 3.jsonl.gz
--rw-r--r-- 1 ---- users 191 Mar 20 16:26 4.jsonl.gz
--rw-r--r-- 1 ---- users 203 Mar 20 16:26 PurchaseOrder.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 1.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 2.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 3.jsonl.gz
+-rw-r--r-- 1 user users 191 Mar 20 16:26 4.jsonl.gz
+-rw-r--r-- 1 user users 203 Mar 20 16:26 PurchaseOrder.jsonl.gz
 
 zcat *.jsonl.gz
 
@@ -213,6 +210,3 @@ zcat *.jsonl.gz
 {"itempartNum": "872-AA", "productName": "Lawnmower", "quantity": 1, "USPrice": 148.95, "comment": "Confirm this is electric"}
 {"itempartNum": "926-AA", "productName": "Baby Monitor", "quantity": 1, "USPrice": 39.98, "shipDate": "1999-05-21"}
 ```
-
-# License
-This software is distributed under the terms of the MIT License. See the file 'LICENSE' in the root directory of the present distribution, or http://opensource.org/licenses/MIT.
