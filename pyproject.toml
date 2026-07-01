@@ -1,0 +1,19 @@
+[project]
+name = "xml_to_json"
+version = "1.0"
+description = "xml_to_json package and tool for converting XML into Json."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "xmlschema>=4.3.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "syrupy>=5.3.2",
+    "ruff"
+]
