@@ -1,0 +1,61 @@
+# serializer version: 1
+# name: test_json
+  dict({
+    'purchaseOrder': dict({
+      'billTo': dict({
+        'billTocountry': 'US',
+        'city': 'Old Town',
+        'name': 'Robert Smith',
+        'state': 'PA',
+        'street': '8 Oak Avenue',
+        'zip': 95819.0,
+      }),
+      'comment': 'Hurry, my lawn is going wild!',
+      'items': dict({
+        'item': list([
+          dict({
+            'USPrice': 148.95,
+            'comment': 'Confirm this is electric',
+            'itempartNum': '872-AA',
+            'productName': 'Lawnmower',
+            'quantity': 1,
+          }),
+          dict({
+            'USPrice': 39.98,
+            'itempartNum': '926-AA',
+            'productName': 'Baby Monitor',
+            'quantity': 1,
+            'shipDate': '1999-05-21',
+          }),
+        ]),
+      }),
+      'purchaseOrderorderDate': '1999-10-20',
+      'shipTo': dict({
+        'city': 'Mill Valley',
+        'name': 'Alice Smith',
+        'shipTocountry': 'US',
+        'state': 'CA',
+        'street': '123 Maple Street',
+        'zip': 90952.0,
+      }),
+    }),
+  })
+# ---
+# name: test_jsonl
+  list([
+    dict({
+      'USPrice': 148.95,
+      'comment': 'Confirm this is electric',
+      'itempartNum': '872-AA',
+      'productName': 'Lawnmower',
+      'quantity': 1,
+    }),
+    dict({
+      'USPrice': 39.98,
+      'itempartNum': '926-AA',
+      'productName': 'Baby Monitor',
+      'quantity': 1,
+      'shipDate': '1999-05-21',
+    }),
+  ])
+# ---
