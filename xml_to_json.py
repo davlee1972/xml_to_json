@@ -23,7 +23,7 @@
 
 import argparse
 
-from xml_to_json.convert_xml_to_json import convert_xml_to_json
+from xml_to_json.convert_xml_to_json import convert_xml
 
 if __name__ == "__main__":
 
@@ -42,5 +42,5 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    convert_xml_to_json(args.xsd_file, args.output_format, args.server, args.target_path, args.zip, args.xpath, args.multi, args.no_overwrite, args.verbose, args.log, args.xml_files)
+    convert_xml(args.xsd_file, args.output_format, args.server, args.target_path, args.zip, args.xpath, args.multi, args.no_overwrite, args.verbose, args.log, args.xml_files)
 
