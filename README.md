@@ -4,6 +4,7 @@ https://github.com/davlee1972/xmlwiz
 
 This new project will be updated using python 3.10+, pypi deployments and support for nested binary parquet and apache arrow memory.
 
+Major improvements include 6x faster xml parsing speed using a vectorized approach, support for writing parquet, improved flattening results, and apis to convert xml schemas into pyarrow schemas and pyarrow tables, recordbatch readers, structs.
 
 # **XML To JSON Converter**
 
